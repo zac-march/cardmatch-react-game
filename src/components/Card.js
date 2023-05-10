@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Card = (props) => {
   const { id, clickHandler, content } = props;
