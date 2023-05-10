@@ -4,7 +4,7 @@ import uniqid from "uniqid";
 import Card from "./Card";
 import Score from "./Score";
 
-const CARDS_TOTAL = 5;
+const CARDS_TOTAL = 12;
 
 const Game = () => {
   const [cards, setCards] = useState();
@@ -92,7 +92,6 @@ const Game = () => {
     <div>
       <Score currentScore={score.current} highscore={score.high} />
       <div className="cards">{cards}</div>
-      <div>{clickedCards}</div>
     </div>
   );
 };
