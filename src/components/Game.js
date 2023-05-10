@@ -75,10 +75,10 @@ const Game = () => {
   }, [clickedCards]);
 
   function handleClickCard(e) {
-    addCard(e.target.id);
+    addClickedCard(e.target.id);
     shuffleCards();
 
-    function addCard(cardId) {
+    function addClickedCard(cardId) {
       setClickedCards((prevCards) => {
         let array = [...prevCards];
         array.push(cardId);
@@ -97,7 +97,7 @@ const Game = () => {
   return (
     <div>
       <Score currentScore={score.current} highscore={score.high} />
-      <div className="cards">{cards}</div>
+      <div className="cards">{cards ? cards : <div class="loader"></div>}</div>
     </div>
   );
 };

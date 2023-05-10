@@ -3,22 +3,27 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   text-align: center;
 }
 
 /* Cards */
 
 .card {
-  padding: 2rem;
+  border-radius: 17px;
   border: solid black 1px;
   cursor: pointer;
   user-select: none;
 }
 
+.card img {
+  border-radius: 15px;
+  display: block;
+  pointer-events: none;
+}
+
 .cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
 }
 
@@ -34,4 +39,26 @@
   padding: 0.5rem;
   color: white;
   background-color: rgb(88, 88, 88);
+}
+
+/* Loading animation
+source: https://www.w3schools.com/howto/howto_css_loader.asp */
+.loader {
+  grid-column-start: 2;
+  align-self: center;
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid rgb(88, 88, 88);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
