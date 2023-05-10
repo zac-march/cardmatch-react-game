@@ -1,17 +1,37 @@
 .App {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  text-align: center;
 }
 
+/* Cards */
+
 .card {
-  padding: 1rem;
+  padding: 2rem;
   border: solid black 1px;
   cursor: pointer;
+  user-select: none;
 }
 
 .cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 0.5rem;
+}
+
+/* Score */
+
+.score {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.score > h2 {
+  padding: 0.5rem;
+  color: white;
+  background-color: rgb(88, 88, 88);
 }
