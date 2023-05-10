@@ -1,5 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import uniqid from "uniqid";
+import Card from "./Card";
 
 const CARDS_TOTAL = 5;
 
@@ -9,24 +11,26 @@ const Game = () => {
   const [score, setScore] = useState({ current: 0, high: 0 });
 
   useEffect(() => {
-    setInitialCards();
+    renderCards();
 
-    function setInitialCards() {
+    function renderCards() {
       let tempCards = [];
       for (let i = 0; i < CARDS_TOTAL; i++) {
-        const key = uniqid();
-        tempCards.push(
-          <div
-            id={"card_" + key}
-            key={key}
-            onClick={handleClickCard}
-            className="card"
-          >
-            <h1>{i}</h1>
-          </div>
-        );
+        tempCards.push(createCard(i));
       }
       setCards(tempCards);
+    }
+
+    function createCard(cardText) {
+      const key = uniqid();
+      return (
+        <Card
+          id={"card_" + key}
+          key={key}
+          clickHandler={handleClickCard}
+          content={cardText}
+        />
+      );
     }
   }, []);
 
@@ -61,7 +65,7 @@ const Game = () => {
         return { ...prevScore, current: 0 };
       });
     }
-  }, [clickedCards, score]);
+  }, [clickedCards]);
 
   function handleClickCard(e) {
     addCard(e.target.id);
