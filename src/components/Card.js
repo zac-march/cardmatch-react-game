@@ -1,11 +1,11 @@
 import React from "react";
 
 const Card = (props) => {
-  const { id, clickHandler, content } = props;
+  const { id, clickHandler, imageUrl } = props;
 
   return (
     <div id={"card_" + id} onClick={clickHandler} className="card">
-      <h1>{content}</h1>
+      <img alt="random" src={imageUrl} />
     </div>
   );
 };

@@ -4,7 +4,7 @@ import uniqid from "uniqid";
 import Card from "./Card";
 import Score from "./Score";
 
-const CARDS_TOTAL = 12;
+const CARDS_TOTAL = 9;
 
 const Game = () => {
   const [cards, setCards] = useState();
@@ -14,22 +14,28 @@ const Game = () => {
   useEffect(() => {
     setInitialCards();
 
-    function setInitialCards() {
+    async function fetchImageUrl() {
+      const result = await fetch("https://picsum.photos/200");
+      return result.url;
+    }
+
+    async function setInitialCards() {
       let tempCards = [];
       for (let i = 0; i < CARDS_TOTAL; i++) {
-        tempCards.push(createCard(i));
+        const imageUrl = await fetchImageUrl();
+        tempCards.push(createCard(imageUrl));
       }
       setCards(tempCards);
     }
 
-    function createCard(cardText) {
+    function createCard(imageUrl) {
       const key = uniqid();
       return (
         <Card
           id={"card_" + key}
           key={key}
           clickHandler={handleClickCard}
-          content={cardText}
+          imageUrl={imageUrl}
         />
       );
     }
