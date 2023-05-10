@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import uniqid from "uniqid";
 import Card from "./Card";
+import Score from "./Score";
 
 const CARDS_TOTAL = 5;
 
@@ -11,9 +12,9 @@ const Game = () => {
   const [score, setScore] = useState({ current: 0, high: 0 });
 
   useEffect(() => {
-    renderCards();
+    setInitialCards();
 
-    function renderCards() {
+    function setInitialCards() {
       let tempCards = [];
       for (let i = 0; i < CARDS_TOTAL; i++) {
         tempCards.push(createCard(i));
@@ -89,9 +90,7 @@ const Game = () => {
 
   return (
     <div>
-      <div>
-        Current: {score.current} | Highscore: {score.high}
-      </div>
+      <Score currentScore={score.current} highscore={score.high} />
       <div className="cards">{cards}</div>
       <div>{clickedCards}</div>
     </div>
