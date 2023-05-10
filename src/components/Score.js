@@ -4,8 +4,9 @@ const Score = (props) => {
   const { currentScore, highscore } = props;
 
   return (
-    <div>
-      Current: {currentScore} | Highscore: {highscore}
+    <div className="score">
+      <h2>Score: {currentScore}</h2>
+      <h2>Highscore: {highscore}</h2>
     </div>
   );
 };
