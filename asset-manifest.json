@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/cardmatch-react-game/static/css/main.4002cb2d.css",
+    "main.js": "/cardmatch-react-game/static/js/main.5024d4a3.js",
+    "static/js/787.ded561a4.chunk.js": "/cardmatch-react-game/static/js/787.ded561a4.chunk.js",
+    "index.html": "/cardmatch-react-game/index.html",
+    "main.4002cb2d.css.map": "/cardmatch-react-game/static/css/main.4002cb2d.css.map",
+    "main.5024d4a3.js.map": "/cardmatch-react-game/static/js/main.5024d4a3.js.map",
+    "787.ded561a4.chunk.js.map": "/cardmatch-react-game/static/js/787.ded561a4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4002cb2d.css",
+    "static/js/main.5024d4a3.js"
+  ]
+}
