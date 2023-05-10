@@ -95,7 +95,7 @@ const Game = () => {
   }
 
   return (
-    <div>
+    <div className="game">
       <Score currentScore={score.current} highscore={score.high} />
       <div className="cards">{cards ? cards : <div class="loader"></div>}</div>
     </div>
